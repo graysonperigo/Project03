@@ -5,18 +5,18 @@ using TMPro;
 
 public class Dialogue : MonoBehaviour
 {
-    //public TextMeshProUGUI textComponent;
-    private string[] sentences;
-    //public float textSpeed;
+    [SerializeField] private TextMeshProUGUI textComponent;
+    [SerializeField] private string[] lines;
+    [SerializeField] private float textSpeed;
+    [SerializeField] private GameObject dialogueBox;
 
-
-    //private int index;
+    private int index;
 
     void Start()
     {
         //sentences = new Queue<string>();
-        //textComponent.text = string.Empty;
-        //StartDialogue();
+        textComponent.text = string.Empty;
+        StartDialogue();
     }
 
     //public void StartDialogue(Dialogue dialogue)
@@ -24,50 +24,51 @@ public class Dialogue : MonoBehaviour
     //    Debug.Log("Starting conversation with " + dialogue.name);
     //}
 
-    //// Update is called once per frame
-    //void Update()
-    //{
-    //    if (Input.GetMouseButtonDown(0))
-    //    {
-    //        if(textComponent.text == lines[index])
-    //        {
-    //            NextLine();
-    //        }
-    //        else
-    //        {
-    //            StopAllCoroutines();
-    //            textComponent.text = lines[index];
-    //        }
-    //    }
-    //}
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (textComponent.text == lines[index])
+            {
+                NextLine();
+            }
+            else
+            {
+                StopAllCoroutines();
+                textComponent.text = lines[index];
+            }
+        }
+    }
 
-    //void StartDialogue()
-    //{
-    //    index = 0;
-    //    StartCoroutine(TypeLine());
+    void StartDialogue()
+    {
+        index = 0;
+        StartCoroutine(TypeLine());
 
-    //}
+    }
 
-    //IEnumerator TypeLine()
-    //{
-    //    foreach (char c in lines[index].ToCharArray())
-    //    {
-    //        textComponent.text += c;
-    //        yield return new WaitForSeconds(textSpeed);
-    //    }
-    //}
+    IEnumerator TypeLine()
+    {
+        foreach (char c in lines[index].ToCharArray())
+        {
+            textComponent.text += c;
+            yield return new WaitForSeconds(textSpeed);
+        }
+    }
 
-    //void NextLine()
-    //{
-    //    if (index < lines.Length - 1)
-    //    {
-    //        index++;
-    //        textComponent.text = string.Empty;
-    //        StartCoroutine(TypeLine());
-    //    }
-    //    else
-    //    {
-    //        gameObject.SetActive(false);
-    //    }
-    //}
+    void NextLine()
+    {
+        if (index < lines.Length - 1)
+        {
+            index++;
+            textComponent.text = string.Empty;
+            StartCoroutine(TypeLine());
+        }
+        else
+        {
+            dialogueBox.SetActive(false);
+            gameObject.SetActive(false);
+        }
+    }
 }

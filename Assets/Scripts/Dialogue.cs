@@ -9,12 +9,14 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private string[] lines;
     [SerializeField] private float textSpeed;
     [SerializeField] private GameObject dialogueBox;
+    public Animator textDisplayAnim;
 
     private int index;
 
     void Start()
     {
         //sentences = new Queue<string>();
+        textDisplayAnim.SetTrigger("Open");
         textComponent.text = string.Empty;
         StartDialogue();
     }
@@ -67,6 +69,9 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
+            StopAllCoroutines();
+            index = 0;
+            textComponent.text = lines[index];
             dialogueBox.SetActive(false);
             gameObject.SetActive(false);
         }

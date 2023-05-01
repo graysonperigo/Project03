@@ -1117,11 +1117,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 34706904}
   lines:
-  - WHA
-  - OH NO
-  - OH NO NO NO NO NO
-  textSpeed: 0.1
+  - Do you know who's bones are on display here?
+  - The answer is....
+  - Your bones.
+  textSpeed: 0.025
   dialogueBox: {fileID: 1754856864}
+  textDisplayAnim: {fileID: 1754856868}
 --- !u!4 &1705241001
 Transform:
   m_ObjectHideFlags: 0
@@ -1215,6 +1216,7 @@ GameObject:
   - component: {fileID: 1754856865}
   - component: {fileID: 1754856867}
   - component: {fileID: 1754856866}
+  - component: {fileID: 1754856868}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -1231,7 +1233,7 @@ RectTransform:
   m_GameObject: {fileID: 1754856864}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 34706903}
@@ -1281,6 +1283,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1754856864}
   m_CullTransparentMesh: 1
+--- !u!95 &1754856868
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754856864}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5873015d39869834d9715ffdb88258e4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1950485018
 GameObject:
   m_ObjectHideFlags: 0

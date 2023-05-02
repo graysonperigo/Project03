@@ -8,6 +8,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textComponent;
     [SerializeField] private string[] lines;
     [SerializeField] private float textSpeed;
+    [Header("Object Inputs - Dialogue Box Object for Both")]
     [SerializeField] private GameObject dialogueBox;
     public Animator textDisplayAnim;
 
